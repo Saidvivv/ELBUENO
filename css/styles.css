@@ -1,0 +1,172 @@
+body {
+  background-color: #4648b8;
+  color: #e0e0e0;
+  font-family: 'Roboto', sans-serif;
+  padding-top: 80px;
+}
+
+section {
+  padding-top: 2rem;
+}
+
+/* Navbar transparente al inicio y fondo al hacer scroll */
+.navbar-scroll {
+  background-color: transparent;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.navbar-scroll.scrolled {
+  background-color: #32aa58;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Hero inicial centrado */
+.inicio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  min-height: 90vh;
+  text-align: center;
+}
+.inicio > div {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Imagen flotante con margen superior */
+#imagenFlotante {
+  margin-top: 100px;
+}
+
+/* Card */
+.card {
+  background-color: #2f2f2f;
+  border: none;
+  border-radius: 12px;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(52, 133, 204, 0.1);
+}
+.card-title {
+  color: #3c3e9e;
+}
+
+/* Botón pushable estilo neón */
+.pushable {
+  position: relative;
+  background: transparent;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  transition: filter 250ms;
+  outline: none;
+}
+.shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #0a0a0a;
+  border-radius: 10px;
+  filter: blur(3px);
+  transform: translateY(2px);
+  transition: transform 600ms ease;
+}
+.edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  background: linear-gradient(
+    145deg,
+    #00c17c 0%,
+    #29ff94 50%,
+    #00c17c 100%
+  );
+}
+.front {
+  position: relative;
+  display: block;
+  border-radius: 10px;
+  background: #2d4698;
+  padding: 16px 32px;
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  transform: translateY(-4px);
+  transition: transform 600ms ease;
+  text-transform: uppercase;
+}
+.pushable:hover {
+  filter: brightness(115%);
+}
+.pushable:hover .front {
+  transform: translateY(-6px);
+  transition: transform 250ms ease;
+}
+.pushable:active .front {
+  transform: translateY(-2px);
+  transition: transform 34ms;
+}
+.pushable:hover .shadow {
+  transform: translateY(4px);
+  transition: transform 250ms ease;
+}
+.pushable:active .shadow {
+  transform: translateY(1px);
+  transition: transform 34ms;
+}
+/* === Botón personalizado beautiful-button === */
+/* From Uiverse.io by KlaujonRuamni */ 
+.beautiful-button {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(to bottom, #1b1c3f, #4a4e91);
+  color: white;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  padding: 14px 28px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  animation: button-shimmer 2s infinite;
+  transition: all 0.3s ease-in-out;
+}
+
+.beautiful-button:hover {
+  background: linear-gradient(to bottom, #2c2f63, #5b67b7);
+  animation: button-particles 1s ease-in-out infinite;
+  transform: translateY(-2px);
+}
+
+.beautiful-button:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes button-shimmer {
+  0% {
+    background-position: left top;
+  }
+  100% {
+    background-position: right bottom;
+  }
+}
+
+@keyframes button-particles {
+  0% {
+    background-position: left top;
+  }
+  100% {
+    background-position: right bottom;
+  }
+}
